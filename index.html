@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Comprobar numero</title>
+    <script>
+    	function rot13() { // LBH QVQ VG!
+
+    		let	str= document.getElementById("campo").value;	
+
+		 	rot13a=str.split("");
+			let resultado=[];
+
+		 	let input= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz !?.";
+		 	let input1=input.split("");
+
+		 	let output="NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm !?.";
+		 	let output2=output.split("");
+
+		 	for(let i=0; i<rot13a.length; i++){
+		    	if(input1.indexOf(rot13a[i])>=0){
+		      	let x=input1.indexOf(rot13a[i])
+
+		      	resultado.push(output[x]);
+
+		    	}
+		  	}
+		  	let texto=resultado.join("");
+		  	document.getElementById("demo").innerHTML = texto;
+		}
+        
+
+
+
+
+
+    
+    </script>
+
+     <!--Estilo-->
+    <link rel="stylesheet" type="text/css" href="estiloCripto.css">
+
+
+    <!--Fuentes-->
+    <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+     <!--iconos-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+
+
+</head>
+<body>
+    <div class="top">
+        <h1 class="titulo">Cifrado cesar</h1>
+    </div>
+
+    <div class="contenedor">
+        
+        <h3>Coloque el mensaje para ser desifrado:</h3>
+        <h4>(unicos simbolos aceptados: "!?." y espacio )</h4>
+
+        <div>
+            <input class="campo" id="campo" type="text" required="1">
+            <p></p>
+            <button class="boton1" onclick="rot13()">Analizar</button>
+            <br>
+
+            <h3>Tu mensaje secreto dice:</h3>
+			
+			<div>
+            	<p class="resultado"  id="demo"></p>
+            </div>
+            <br>
+
+        </div>
+
+	<h4>Quieres saber mas sobre el Caesar Cypher has click <a href="https://en.wikipedia.org/wiki/ROT13"> aca</a></h4>
+
+    </div>
+
+    <div class="footer">
+        <footer>
+          <p>
+            &copy; Created for
+            <a href="https://franzcod.github.io/MyPerfil/" target="_blank">Palacios Francisco <i class="fab fa-gripfire"></i></i></a>
+          </p>
+        </footer>
+    </div>
+
+
+</body>
+
